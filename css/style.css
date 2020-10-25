@@ -1,0 +1,537 @@
+@import url("reset.css");
+/*
+*   écran pour ordinateur
+*
+*/
+@media screen and (min-width: 769px) {
+body header{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+.anim1{
+    padding: 12px 0px 12px 12px;
+    border-top-left-radius: 25px;
+    animation: titre1 2s infinite;
+    color:white;
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+.anim2{
+    border-bottom-right-radius: 25px;
+    background: blueviolet;
+    padding-top: 12px;
+    padding-right:12px;
+    color:white;
+    font-size: 3.5em;
+    animation: titre2 2s infinite;
+    font-weight: bold;
+}
+
+body header div:nth-child(1):hover,body header div:nth-child(2):hover{
+    animation-play-state: paused;        
+    background: red;
+    color:white;
+}
+
+@keyframes titre1{
+    0%{
+      background: green;
+      color:black;  
+    }
+    50%{
+        background: red;
+        color: white;
+    }
+    100%{
+        background: yellow;
+    }
+}
+
+@keyframes titre2{
+    0%{
+      background: yellow;  
+    }
+    50%{
+        background: red;
+        color:white;
+    }
+    100%{
+        background: green;
+        color:black;
+    }
+}
+
+main .container{
+    background: url("../images/image-couleurs.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    
+}
+main nav{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transform: translateX(0%);
+}
+main nav ul{
+    list-style-type: none;
+    text-align: center;
+    padding:12px;
+}
+main nav ul li{
+    display: inline-block;
+    margin:5px;
+}
+
+main nav ul li a{
+    text-decoration: none;
+    font-size: 1.3em;
+    color:white;
+    transition:border-bottom 0.2s ease-out;
+    background: red;
+    padding:10px;
+    border-radius: 10px 10px 0 0;
+    position:relative;
+}
+main nav ul li a::after{
+    position:absolute;
+    content:"";
+    left:0;
+    bottom:0;
+    right:100%;
+    background:white;
+    height:5px;
+    transition:right 0.3s;
+    
+
+}
+main nav ul li a:hover::after{
+   right:0;
+   
+}
+
+
+main #burger{
+    display: none;
+}
+main .afficheBurger{
+    display:none;
+}
+main label .tirer{
+   display:none;
+}
+
+main .scene1{
+    width:100%;
+    height:450px;
+    background: url("../images/sapin.jpg");
+    background-size: cover;
+    background-position: center;
+    position:relative;
+}
+
+ /* element pour animation 1 */
+.element{
+    position:absolute;
+    top:0;
+    animation: animElement 4s;
+}
+@keyframes animElement{
+    0%{
+        top:0;
+    }
+    100%{
+        top:100%;
+    }
+}
+.element::before{
+    content:"\002746";
+    width:20px;
+    height:20px;
+}
+
+main h2{
+    text-align:center;
+    font-size:2.5em;
+    text-decoration:underline;
+}
+main .scene2{
+    width: 350px;
+    height: 500px;
+    margin:auto;
+    background:url("../images/terrain.jpg");
+    background-size: cover;
+    position:relative;
+}
+main .scene2 >p{
+    font-size: 6em;
+    color:red;
+    transform:translateX(-400%);
+    text-align: center;
+}
+main .scene2 .balle{
+    font-size: 2.2em;
+    position:absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+main .scene3{
+    background: url("../images/ciel.jpg");
+    background-size: cover;
+    width:100%;
+    height: 550px;
+    position:relative;
+}
+.ballon{
+    background: url("../images/ballon.png");
+    width: 135px;
+    height: 195px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position:absolute;
+    animation: anim 6s;
+}
+
+@keyframes anim{
+    0%{
+        transform:scale(0.4);
+    }
+    100%{
+        transform:scale(1);
+        left:100%;
+    }
+}
+main .scene4{
+    width: 100%;
+    height: 500px;
+    background: black;
+    position:relative;
+}
+main .scene4 .feuxArtifice{
+    
+    bottom:0;
+    z-index : 999;
+    position: absolute;
+    height : 15px;
+    width : 15px;
+    border-radius : 5px;
+    animation-name : firework-animation;
+    animation-timing-function : linear;
+    animation-duration : 4s;
+    animation-iteration-count : infinite;
+    border-radius: 50%;
+}
+    
+@keyframes    firework-animation {
+    0% {
+        bottom:0;
+        background-color : #ff8426;}
+    25% {background-color : #fffc84;}
+    50% {background-color : #ff83f4;}
+    75% {background-color : #83b6ff;}
+    100% {background-color : #ff8426;}
+}
+@-webkit-keyframes firework-animation {
+    0% {background-color : #ff8426;}
+    25% {background-color : #fffc84;}
+    50% {background-color : #ff83f4;}
+    75% {background-color : #83b6ff;}
+    100% {background-color : #ff8426;}
+}
+
+}
+
+/*
+*   écran mobile ou tablette 
+*
+*/
+
+@media screen and (max-width: 768px) {
+    body header{
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        justify-content: center;
+        width: 65%;
+        margin:auto;    
+    }
+
+    .anim1{
+        padding: 12px 0px 12px 12px;
+        border-top-left-radius: 25px;
+        animation: titre1 2s infinite;
+        color:white;
+        font-size: 3.5em;
+        font-weight: bold;
+        text-align: center;
+    
+    }
+
+    .anim2{
+        border-bottom-right-radius: 25px;
+        background: blueviolet;
+        padding-top: 12px;
+        padding-right:12px;
+        color:white;
+        font-size: 3.5em;
+        animation: titre2 2s infinite;
+        font-weight: bold;
+        text-align: center;
+    }
+    @keyframes titre1{
+        0%{
+          background: green;
+          color:black;  
+        }
+        50%{
+            background: red;
+            color: white;
+        }
+        100%{
+            background: yellow;
+        }
+    }
+    
+    @keyframes titre2{
+        0%{
+          background: yellow;  
+        }
+        50%{
+            background: red;
+            color:white;
+        }
+        100%{
+            background: green;
+            color:black;
+        }
+    }
+    main .container{
+        background: url("../images/image-couleurs.jpg");
+        background-size: cover;
+        background-position: center;
+        
+    }
+    main #burger{
+        display: none;
+    }
+    main .afficheBurger{
+        width:50px;
+        height:30px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between; 
+    }
+    main label .tirer{
+        width: 50px;
+        height:6px;
+        background: orange;
+    }
+    
+    main #burger:checked~nav{
+         display: block;
+    }
+    main #burger:checked~.afficheBurger > :nth-child(1) {
+        /* background: yellow; */
+        animation: change1 1.5s infinite ;
+    }
+    main #burger:checked~.afficheBurger > :nth-child(2) {
+        /* background: yellow; */
+        animation: change1 1.9s infinite;
+    }
+    main #burger:checked~.afficheBurger > :nth-child(3) {
+        /* background: yellow; */
+        animation: change1 2.3s infinite;
+    }
+
+    main #burger:checked~nav {
+       transform: translateX(0%);
+    }
+    main #burger~nav {
+        transform: translateX(-100%);
+        transition:1s;
+    }
+    main nav{
+        background: rgb(170, 0, 0);
+        text-align:center;
+    }
+    main nav{
+        height:220px;
+    }
+    main nav ul{
+       padding-top:10px;
+    }
+    main nav ul li{
+        padding-top: 15px;
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        width:40%;
+        margin:auto;
+       
+    }
+    main nav ul li a{
+        text-decoration: none;
+        font-size:1.5em;
+        padding-bottom:10px;
+        
+    }
+    main nav ul li a::before{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        right:100%;
+        height:2%;
+        background:linear-gradient(red, yellow);;
+        transition: right 0.3s;
+    }
+    main nav ul li a::after{
+        content:"";
+        position:absolute;
+        left:0;
+        bottom:0;
+        right: 100%;
+        height:2%;
+        background:linear-gradient(red, yellow);;
+        transition: right 0.3s;
+    }
+    main nav ul li a:hover::before{
+        right: 0%;
+     }
+    main nav ul li a:hover::after{
+       right: 0%;
+    }
+    @keyframes change1{
+        0%{
+            background: yellow;  
+            width: 0px;
+            
+        }
+        50%{
+            background: orange;
+        }
+        100%{
+            background: red;  
+            width: 50px;
+        }
+    }
+    main .scene1{
+        width:100%;
+        height:450px;
+        background: url("../images/sapin.jpg");
+        position:relative;
+    }
+    .element{
+        position:absolute;
+        top:0;
+        animation: animElement 4s;
+    }
+    @keyframes animElement{
+        0%{
+            top:0;
+        }
+        100%{
+            top:100%;
+        }
+    }
+    .element::before{
+        content:"\002746";
+        width:20px;
+        height:20px;
+    }
+    
+    main h2{
+        text-align:center;
+        font-size:2.5em;
+        text-decoration:underline;
+    }
+    main .scene2 {
+        width: 350px;
+        height: 500px;
+        background: url("../images/terrain.jpg");
+        background-size: cover;
+        position:relative;
+        margin:auto; 
+    }
+    main .scene2 >p{
+        font-size: 6em;
+        color:red;
+        transform:translateX(-100%);
+    }
+    main .scene2 .balle{
+        font-size: 2.2em;
+        position:absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        transition-delay: 2s;
+    }
+    
+    main .scene3{
+        background: url("../images/ciel.jpg");
+        background-size: cover;
+        width:100%;
+        height: 550px;
+        position:relative;
+    }
+    .ballon{
+        background: url("../images/ballon.png");
+        width: 135px;
+        height: 195px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position:absolute;
+        animation: anim 6s;
+    }
+    
+    @keyframes anim{
+        0%{
+            transform:scale(0.4);
+        }
+        100%{
+            transform:scale(1);
+            left:100%;
+        }
+    }
+
+    main .scene4{
+        width: 100%;
+        height: 500px;
+        background: black;
+        position:relative;
+    }
+    main .scene4 .feuxArtifice{
+        
+        bottom:0;
+        z-index : 999;
+        position: absolute;
+        height : 15px;
+        width : 15px;
+        border-radius : 5px;
+        animation-name : firework-animation;
+        animation-timing-function : linear;
+        animation-duration : 4s;
+        animation-iteration-count : infinite;
+        border-radius: 50%;
+    }
+        
+    @keyframes    firework-animation {
+        0% {
+            bottom:0;
+            background-color : #ff8426;}
+        25% {background-color : #fffc84;}
+        50% {background-color : #ff83f4;}
+        75% {background-color : #83b6ff;}
+        100% {background-color : #ff8426;}
+    }
+    @-webkit-keyframes firework-animation {
+        0% {background-color : #ff8426;}
+        25% {background-color : #fffc84;}
+        50% {background-color : #ff83f4;}
+        75% {background-color : #83b6ff;}
+        100% {background-color : #ff8426;}
+    }
+}
